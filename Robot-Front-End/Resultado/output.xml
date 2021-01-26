@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20210126 15:31:16.129" generator="Robot 3.1.2 (Python 2.7.15 on win32)">
+<suite id="s1" name="TestHello &amp; TestLoggin &amp; TestRest">
+<suite source="C:\ProjetosGitlab\Pixeon-Project\Robot-Front-End\suites\TestHello.robot" id="s1-s1" name="TestHello">
+<test id="s1-s1-t1" name="Cenário: Valida Hello World">
+<kw name="Acessar a tela de Hello World" library="ResourceHello">
+<kw name="Abrir navegador" library="ResourceConfiguracoes">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210126 15:31:16.725" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<msg timestamp="20210126 15:31:16.729" level="INFO">Firefox driver log is always forced to to: C:\ProjetosGitlab\Pixeon-Project\Robot-Front-End\Resultado\geckodriver-1.log</msg>
+<status status="PASS" endtime="20210126 15:31:22.670" starttime="20210126 15:31:16.725"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20210126 15:31:22.942" starttime="20210126 15:31:22.671"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:22.942" starttime="20210126 15:31:16.724"></status>
+</kw>
+<kw name="Abre a tela &quot;Hello World&quot;" library="ResourceConfiguracoes">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PAGINA}' == 'Hello World'</arg>
+<arg>Pagina Hello World</arg>
+</arguments>
+<kw name="Pagina Hello World" library="ResourceConfiguracoes">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${HELLO_WORLD}</arg>
+</arguments>
+<msg timestamp="20210126 15:31:22.947" level="INFO">Opening url 'https://the-internet.herokuapp.com/dynamic_loading/1'</msg>
+<status status="PASS" endtime="20210126 15:31:25.700" starttime="20210126 15:31:22.946"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:25.700" starttime="20210126 15:31:22.945"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:25.700" starttime="20210126 15:31:22.944"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PAGINA}' == 'Loggin'</arg>
+<arg>Pagina Loggin</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:31:25.701" starttime="20210126 15:31:25.701"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:25.702" starttime="20210126 15:31:22.943"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:25.702" starttime="20210126 15:31:16.723"></status>
+</kw>
+<kw name="Clicar em start" library="ResourceHello">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BOTAO_START}</arg>
+</arguments>
+<msg timestamp="20210126 15:31:25.704" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Start')]'.</msg>
+<status status="PASS" endtime="20210126 15:31:26.016" starttime="20210126 15:31:25.703"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:26.017" starttime="20210126 15:31:25.703"></status>
+</kw>
+<kw name="Aguardar gif de carregando" library="ResourceHello">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${GIF_LOADING}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:31:26.080" starttime="20210126 15:31:26.018"></status>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<arguments>
+<arg>${GIF_LOADING}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:31:30.955" starttime="20210126 15:31:26.081"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:30.956" starttime="20210126 15:31:26.017"></status>
+</kw>
+<kw name="Valida Texto hello World" library="ResourceHello">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${MSG_FINAL}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:31:30.986" starttime="20210126 15:31:30.958"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${MSG_FINAL}</arg>
+<arg>${TEXTO_FINAL}</arg>
+</arguments>
+<msg timestamp="20210126 15:31:30.987" level="INFO">Verifying element 'id=finish' contains exact text 'Hello World!'.</msg>
+<status status="PASS" endtime="20210126 15:31:31.022" starttime="20210126 15:31:30.986"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210126 15:31:31.153" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210126 15:31:31.153" starttime="20210126 15:31:31.023"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:31.153" starttime="20210126 15:31:30.957"></status>
+</kw>
+<kw type="teardown" name="Fechar navegador" library="ResourceHello">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20210126 15:31:34.302" starttime="20210126 15:31:31.155"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:34.303" starttime="20210126 15:31:31.154"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:34.304" critical="yes" starttime="20210126 15:31:16.721"></status>
+</test>
+<doc>O teste inicia o carregamento da pagina e aguarda a informação de Hello World ser apresentada</doc>
+<status status="PASS" endtime="20210126 15:31:34.306" starttime="20210126 15:31:16.191"></status>
+</suite>
+<suite source="C:\ProjetosGitlab\Pixeon-Project\Robot-Front-End\suites\TestLoggin.robot" id="s1-s2" name="TestLoggin">
+<test id="s1-s2-t1" name="Cenário: Valida Login Correto">
+<kw name="Acessar a tela de Login" library="ResourceLoggin">
+<kw name="Abrir navegador" library="ResourceConfiguracoes">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210126 15:31:34.328" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<msg timestamp="20210126 15:31:34.330" level="INFO">Firefox driver log is always forced to to: C:\ProjetosGitlab\Pixeon-Project\Robot-Front-End\Resultado\geckodriver-2.log</msg>
+<status status="PASS" endtime="20210126 15:31:39.784" starttime="20210126 15:31:34.328"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20210126 15:31:40.058" starttime="20210126 15:31:39.784"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:40.059" starttime="20210126 15:31:34.327"></status>
+</kw>
+<kw name="Abre a tela &quot;Loggin&quot;" library="ResourceConfiguracoes">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PAGINA}' == 'Hello World'</arg>
+<arg>Pagina Hello World</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:31:40.060" starttime="20210126 15:31:40.060"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PAGINA}' == 'Loggin'</arg>
+<arg>Pagina Loggin</arg>
+</arguments>
+<kw name="Pagina Loggin" library="ResourceConfiguracoes">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGGIN}</arg>
+</arguments>
+<msg timestamp="20210126 15:31:40.065" level="INFO">Opening url 'https://the-internet.herokuapp.com/login'</msg>
+<status status="PASS" endtime="20210126 15:31:42.550" starttime="20210126 15:31:40.064"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:42.550" starttime="20210126 15:31:40.063"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:42.550" starttime="20210126 15:31:40.061"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:42.550" starttime="20210126 15:31:40.059"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:42.550" starttime="20210126 15:31:34.327"></status>
+</kw>
+<kw name="Informa o usuario &quot;tomsmith&quot; e senha &quot;SuperSecretPassword!&quot;" library="ResourceLoggin">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${INPUT_USUARIO}</arg>
+<arg>${USUARIO_INFORMADO}</arg>
+</arguments>
+<msg timestamp="20210126 15:31:42.553" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<status status="PASS" endtime="20210126 15:31:42.670" starttime="20210126 15:31:42.553"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${INPUT_SENHA}</arg>
+<arg>${SENHA_INFORMADA}</arg>
+</arguments>
+<msg timestamp="20210126 15:31:42.671" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<status status="PASS" endtime="20210126 15:31:42.736" starttime="20210126 15:31:42.670"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:42.737" starttime="20210126 15:31:42.552"></status>
+</kw>
+<kw name="Clicar em Loggin" library="ResourceLoggin">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>class=radius</arg>
+</arguments>
+<msg timestamp="20210126 15:31:42.745" level="INFO">Clicking button 'class=radius'.</msg>
+<status status="PASS" endtime="20210126 15:31:43.514" starttime="20210126 15:31:42.744"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>15s</arg>
+</arguments>
+<msg timestamp="20210126 15:31:58.515" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" endtime="20210126 15:31:58.515" starttime="20210126 15:31:43.514"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:58.515" starttime="20210126 15:31:42.744"></status>
+</kw>
+<kw name="Valida loggin com sucesso" library="ResourceLoggin">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${AREA_SEGURA}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:31:58.558" starttime="20210126 15:31:58.517"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${TEXTO_AREA_SEGURA}</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:31:58.570" starttime="20210126 15:31:58.558"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210126 15:31:58.715" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210126 15:31:58.716" starttime="20210126 15:31:58.570"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:31:58.716" starttime="20210126 15:31:58.516"></status>
+</kw>
+<kw type="teardown" name="Fechar navegador" library="ResourceLoggin">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20210126 15:32:01.806" starttime="20210126 15:31:58.717"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:01.806" starttime="20210126 15:31:58.717"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:01.807" critical="yes" starttime="20210126 15:31:34.326"></status>
+</test>
+<test id="s1-s2-t2" name="Cenário: Valida Login Invalido">
+<kw name="Acessar a tela de Login" library="ResourceLoggin">
+<kw name="Abrir navegador" library="ResourceConfiguracoes">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210126 15:32:01.812" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
+<msg timestamp="20210126 15:32:01.814" level="INFO">Firefox driver log is always forced to to: C:\ProjetosGitlab\Pixeon-Project\Robot-Front-End\Resultado\geckodriver-3.log</msg>
+<status status="PASS" endtime="20210126 15:32:07.727" starttime="20210126 15:32:01.812"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20210126 15:32:07.992" starttime="20210126 15:32:07.728"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:07.993" starttime="20210126 15:32:01.811"></status>
+</kw>
+<kw name="Abre a tela &quot;Loggin&quot;" library="ResourceConfiguracoes">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PAGINA}' == 'Hello World'</arg>
+<arg>Pagina Hello World</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:07.994" starttime="20210126 15:32:07.994"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${PAGINA}' == 'Loggin'</arg>
+<arg>Pagina Loggin</arg>
+</arguments>
+<kw name="Pagina Loggin" library="ResourceConfiguracoes">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGGIN}</arg>
+</arguments>
+<msg timestamp="20210126 15:32:07.998" level="INFO">Opening url 'https://the-internet.herokuapp.com/login'</msg>
+<status status="PASS" endtime="20210126 15:32:10.407" starttime="20210126 15:32:07.998"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:10.407" starttime="20210126 15:32:07.995"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:10.407" starttime="20210126 15:32:07.995"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:10.408" starttime="20210126 15:32:07.993"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:10.408" starttime="20210126 15:32:01.811"></status>
+</kw>
+<kw name="Informa o usuario &quot;Anderson&quot; e senha &quot;SenhaAnderson&quot;" library="ResourceLoggin">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${INPUT_USUARIO}</arg>
+<arg>${USUARIO_INFORMADO}</arg>
+</arguments>
+<msg timestamp="20210126 15:32:10.412" level="INFO">Typing text 'Anderson' into text field 'id=username'.</msg>
+<status status="PASS" endtime="20210126 15:32:10.521" starttime="20210126 15:32:10.411"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${INPUT_SENHA}</arg>
+<arg>${SENHA_INFORMADA}</arg>
+</arguments>
+<msg timestamp="20210126 15:32:10.523" level="INFO">Typing text 'SenhaAnderson' into text field 'id=password'.</msg>
+<status status="PASS" endtime="20210126 15:32:10.626" starttime="20210126 15:32:10.522"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:10.626" starttime="20210126 15:32:10.410"></status>
+</kw>
+<kw name="Clicar em Loggin" library="ResourceLoggin">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>class=radius</arg>
+</arguments>
+<msg timestamp="20210126 15:32:10.638" level="INFO">Clicking button 'class=radius'.</msg>
+<status status="PASS" endtime="20210126 15:32:11.484" starttime="20210126 15:32:10.637"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>15s</arg>
+</arguments>
+<msg timestamp="20210126 15:32:26.485" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" endtime="20210126 15:32:26.485" starttime="20210126 15:32:11.484"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:26.485" starttime="20210126 15:32:10.637"></status>
+</kw>
+<kw name="Valida loggin com erro" library="ResourceLoggin">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${LOGIN_INVALIDO}</arg>
+<arg>timeout=${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:26.527" starttime="20210126 15:32:26.487"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210126 15:32:26.700" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20210126 15:32:26.700" starttime="20210126 15:32:26.527"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:26.700" starttime="20210126 15:32:26.486"></status>
+</kw>
+<kw type="teardown" name="Fechar navegador" library="ResourceLoggin">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20210126 15:32:29.912" starttime="20210126 15:32:26.702"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:29.912" starttime="20210126 15:32:26.701"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:29.913" critical="yes" starttime="20210126 15:32:01.810"></status>
+</test>
+<doc>Os testes abaixo visam validar a tela de loggin</doc>
+<status status="PASS" endtime="20210126 15:32:29.916" starttime="20210126 15:31:34.310"></status>
+</suite>
+<suite source="C:\ProjetosGitlab\Pixeon-Project\Robot-Front-End\suites\TestRest.robot" id="s1-s3" name="TestRest">
+<test id="s1-s3-t1" name="Cenário: API GET">
+<kw name="Solicita metodo &quot;GET&quot; da API" library="ResourceRest">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'GET'</arg>
+<arg>Metodo Get</arg>
+</arguments>
+<kw name="Metodo Get" library="ResourceRest">
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>users/1</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.356" starttime="20210126 15:32:30.692"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>${STATUS_GET_SUCESSO}</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.359" starttime="20210126 15:32:31.357"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response body id</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.361" starttime="20210126 15:32:31.360"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>response body name</arg>
+<arg>Leanne Graham</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.362" starttime="20210126 15:32:31.361"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:31.362" starttime="20210126 15:32:30.691"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:31.363" starttime="20210126 15:32:30.690"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'POST'</arg>
+<arg>Metodo POST</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.363" starttime="20210126 15:32:31.363"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'PUT'</arg>
+<arg>Metodo PUT</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.364" starttime="20210126 15:32:31.364"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'DELETE'</arg>
+<arg>Metodo DELETE</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.365" starttime="20210126 15:32:31.364"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:31.365" starttime="20210126 15:32:30.689"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:31.366" critical="yes" starttime="20210126 15:32:30.686"></status>
+</test>
+<test id="s1-s3-t2" name="Cenário: API POST">
+<kw name="Solicita metodo &quot;POST&quot; da API" library="ResourceRest">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'GET'</arg>
+<arg>Metodo Get</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.370" starttime="20210126 15:32:31.370"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'POST'</arg>
+<arg>Metodo POST</arg>
+</arguments>
+<kw name="Metodo POST" library="ResourceRest">
+<kw name="Post" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<arguments>
+<arg>/users</arg>
+<arg>{ "id": 11, "name": "Anderson Alves" }</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.765" starttime="20210126 15:32:31.372"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>201</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.767" starttime="20210126 15:32:31.766"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response body id</arg>
+<arg>11</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.768" starttime="20210126 15:32:31.767"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>response body name</arg>
+<arg>Anderson Alves</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.770" starttime="20210126 15:32:31.769"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:31.770" starttime="20210126 15:32:31.371"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:31.770" starttime="20210126 15:32:31.371"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'PUT'</arg>
+<arg>Metodo PUT</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.771" starttime="20210126 15:32:31.770"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'DELETE'</arg>
+<arg>Metodo DELETE</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.772" starttime="20210126 15:32:31.771"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:31.772" starttime="20210126 15:32:31.369"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:31.773" critical="yes" starttime="20210126 15:32:31.368"></status>
+</test>
+<test id="s1-s3-t3" name="Cenário: API PUT">
+<kw name="Solicita metodo &quot;PUT&quot; da API" library="ResourceRest">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'GET'</arg>
+<arg>Metodo Get</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.778" starttime="20210126 15:32:31.778"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'POST'</arg>
+<arg>Metodo POST</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:31.779" starttime="20210126 15:32:31.779"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'PUT'</arg>
+<arg>Metodo PUT</arg>
+</arguments>
+<kw name="Metodo PUT" library="ResourceRest">
+<kw name="Put" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a PUT request to the endpoint.*</doc>
+<arguments>
+<arg>/users/4</arg>
+<arg>{ "age": "25" }</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:32.119" starttime="20210126 15:32:31.781"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>response body age</arg>
+<arg>25</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:32.120" starttime="20210126 15:32:32.119"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:32.121" starttime="20210126 15:32:31.780"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:32.121" starttime="20210126 15:32:31.779"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'DELETE'</arg>
+<arg>Metodo DELETE</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:32.122" starttime="20210126 15:32:32.121"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:32.122" starttime="20210126 15:32:31.777"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:32.123" critical="yes" starttime="20210126 15:32:31.775"></status>
+</test>
+<test id="s1-s3-t4" name="Cenário: API DELETE">
+<kw name="Solicita metodo &quot;DELETE&quot; da API" library="ResourceRest">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'GET'</arg>
+<arg>Metodo Get</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:32.129" starttime="20210126 15:32:32.128"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'POST'</arg>
+<arg>Metodo POST</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:32.130" starttime="20210126 15:32:32.129"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'PUT'</arg>
+<arg>Metodo PUT</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:32.131" starttime="20210126 15:32:32.130"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${METODO_SOLICITADO}' == 'DELETE'</arg>
+<arg>Metodo DELETE</arg>
+</arguments>
+<kw name="Metodo DELETE" library="ResourceRest">
+<kw name="Delete" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a DELETE request to the endpoint.*</doc>
+<arguments>
+<arg>/users/9</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:32.474" starttime="20210126 15:32:32.133"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>200</arg>
+<arg>204</arg>
+</arguments>
+<status status="PASS" endtime="20210126 15:32:32.476" starttime="20210126 15:32:32.475"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:32.477" starttime="20210126 15:32:32.132"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:32.477" starttime="20210126 15:32:32.131"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:32.477" starttime="20210126 15:32:32.127"></status>
+</kw>
+<status status="PASS" endtime="20210126 15:32:32.478" critical="yes" starttime="20210126 15:32:32.126"></status>
+</test>
+<doc>Os testes abaixo visam avaliar o funcionamento da api</doc>
+<status status="PASS" endtime="20210126 15:32:32.481" starttime="20210126 15:32:29.920"></status>
+</suite>
+<status status="PASS" endtime="20210126 15:32:32.490" starttime="20210126 15:31:16.136"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="7">Critical Tests</stat>
+<stat fail="0" pass="7">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="TestHello &amp; TestLoggin &amp; TestRest" pass="7">TestHello &amp; TestLoggin &amp; TestRest</stat>
+<stat fail="0" id="s1-s1" name="TestHello" pass="1">TestHello &amp; TestLoggin &amp; TestRest.TestHello</stat>
+<stat fail="0" id="s1-s2" name="TestLoggin" pass="2">TestHello &amp; TestLoggin &amp; TestRest.TestLoggin</stat>
+<stat fail="0" id="s1-s3" name="TestRest" pass="4">TestHello &amp; TestLoggin &amp; TestRest.TestRest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
